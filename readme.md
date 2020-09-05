@@ -49,15 +49,15 @@ Sau khi đọc file đầu vào, ta có thể thấy như sau:
 
 Các features lần lượt là:fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol (11 features). Output mà ta cần predict là quality - có giá trị trong khoảng 0-10 (nhưng trong data có giá trị từ 3.0 tới 8.0).
 
-| ![image-20200904210544438](/home/t3bol90/.config/Typora/typora-user-images/image-20200904210544438.png) |
+| ![image-20200904210544438](./img/image-20200904210544438.png) |
 | :----------------------------------------------------------: |
 | **Input data có 1199 dòng và 12 cột (11 features và 1 label)** |
 
-| ![image-20200904210721519](/home/t3bol90/.config/Typora/typora-user-images/image-20200904210721519.png) |
+| ![image-20200904210721519](./img/image-20200904210721519.png) |
 | :----------------------------------------------------------: |
 |                        **Mô tả data**                        |
 
-| ![image-20200904210948038](/home/t3bol90/.config/Typora/typora-user-images/image-20200904210948038.png) |
+| ![image-20200904210948038](./img/image-20200904210948038.png) |
 | :----------------------------------------------------------: |
 |   **Kiểm tra có null không và kiểu dữ liệu của từng dòng**   |
 
@@ -80,13 +80,13 @@ Cũng chính là hàm `mean_squared_error` trong `skitlearn.metrics`.
 
 Ở đây sau khi tách cột 'quality' ra khỏi data làm label thì ta có được phần còn lại. Đặt hết phần còn lại vào train thì ta sẽ có được mô hình hồi qui tuyến tính với 11 đặc trưng:
 
-| ![image-20200904212610686](/home/t3bol90/.config/Typora/typora-user-images/image-20200904212610686.png) |
+| ![image-20200904212610686](./img/image-20200904212610686.png) |
 | :----------------------------------------------------------: |
 |                **Data sau khi bỏ cột label**                 |
 
 Với mô hình này, ta có được kết quả như phía dưới:
 
-| ![image-20200904212729764](/home/t3bol90/.config/Typora/typora-user-images/image-20200904212729764.png) |
+| ![image-20200904212729764](./img/image-20200904212729764.png) |
 | :----------------------------------------------------------: |
 | `Model 11 features có sai số bình phương trung bình là 0.4146602076820373` |
 
@@ -102,7 +102,7 @@ Sử dụng phương pháp Cross validation (với hàm KFold trong thư viện)
 
   Sau khi lấy giá trị trung bình của các lần iteration, ta có được bảng error của từng model ứng với mỗi feature được chọn:
 
-| ![image-20200904213423405](/home/t3bol90/.config/Typora/typora-user-images/image-20200904213423405.png) |
+| ![image-20200904213423405](./img/image-20200904213423405.png) |
 | :----------------------------------------------------------: |
 |          **Mô hình ứng với từng feature và sai số**          |
 
@@ -113,7 +113,7 @@ Sử dụng phương pháp Cross validation (với hàm KFold trong thư viện)
 
 Dưới đây là biểu đồ tương quan giữa các features:
 
-| ![image-20200904214654208](/home/t3bol90/.config/Typora/typora-user-images/image-20200904214654208.png) |
+| ![image-20200904214654208](./img/image-20200904214654208.png) |
 | :----------------------------------------------------------: |
 |                    **Biểu đồ tương quan**                    |
 
@@ -131,13 +131,13 @@ Các features được chọn bao gồm: 'fixed acidity', 'volatile acidity', 'c
 
 Các features trên có được thông qua việc khảo sát hai biến ngẫu nhiên với độ tin cậy 0.1 (sử dụng kiến thức xác suất thống kê học ở kỳ trước):
 
-| ![image-20200904215400103](/home/t3bol90/.config/Typora/typora-user-images/image-20200904215400103.png) |
+| ![image-20200904215400103](./img/image-20200904215400103.png) |
 | :----------------------------------------------------------: |
 |                   **Bảng tổng kết model**                    |
 
 Model này sau khi train thì có sai số nhỏ hơn: 0.36849063618742633.
 
-| ![image-20200904215551529](/home/t3bol90/.config/Typora/typora-user-images/image-20200904215551529.png) |
+| ![image-20200904215551529](./img/image-20200904215551529.png) |
 | :----------------------------------------------------------: |
 |                 **Kết quả của model tự tạo**                 |
 
